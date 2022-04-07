@@ -12,4 +12,4 @@ Matrícula: 140124
   O projeto, então, utilizou um banco de dados em memória com o intuito do trabalho mostrar objetivamente as funcionalidades implementadas. Isso faz com que, toda vez que o projeto seja reiniciado, o banco de dados é apagado e novos inserts devem ser feitos.
   Foi utilizado o Postman para consumo das APIs criadas, e foi utilizado o swagger OpenAPI 3.0 para construção da documentação das funcionalidades da API.
   
-  No repositório encontra-se o jar do projeto, o código do projeto, a collection do Postman para requisições localhost da API e o json da documentação OpenAPI 3.0.
+  No repositório encontra-se o jar do projeto, o código do projeto, o pdf contendo os prints das requisições, a collection do Postman para requisições localhost da API e o json da documentação OpenAPI 3.0.
