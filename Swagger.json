@@ -1,0 +1,990 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "API para gerenciamento de operações relacionadas ao campeonato brasileiro.",
+    "version": "1.0.0",
+    "title": "API Campeonato Brasileiro",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "felipefg@algartelecom.com.br"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "paths": {
+    "/times": {
+      "get": {
+        "tags": [
+          "Times"
+        ],
+        "summary": "Lista times",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/timesList"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Times"
+        ],
+        "summary": "Insere um time",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/timesUpdate"
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/timesList"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      }
+    },
+    "/times/{id}": {
+      "put": {
+        "tags": [
+          "Times"
+        ],
+        "summary": "Altera um time",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/timesUpdate"
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/timesList"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Times"
+        ],
+        "summary": "Deleta um time",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/timesDel"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      }
+    },
+    "/jogadores": {
+      "get": {
+        "tags": [
+          "Jogadores"
+        ],
+        "summary": "Lista jogadores",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/jogadoresList"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Jogadores"
+        ],
+        "summary": "Insere um jogador",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/jogadorUpdate"
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/jogadoresList"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      }
+    },
+    "/jogadores/{id}": {
+      "put": {
+        "tags": [
+          "Jogadores"
+        ],
+        "summary": "Altera um jogador",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/jogadorUpdate"
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/jogadoresList"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Jogadores"
+        ],
+        "summary": "Deleta um jogador",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/jogadoresDel"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      }
+    },
+    "/torneios": {
+      "get": {
+        "tags": [
+          "Torneios"
+        ],
+        "summary": "Lista torneios",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/torneiosList"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Torneios"
+        ],
+        "summary": "Insere um torneio",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/torneioUpdate"
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/torneiosList"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      }
+    },
+    "/torneios/{id}": {
+      "put": {
+        "tags": [
+          "Torneios"
+        ],
+        "summary": "Altera um torneio",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/torneioUpdate"
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/torneiosList"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Torneios"
+        ],
+        "summary": "Deleta um torneios",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/torneiosDel"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      }
+    },
+    "/partidas": {
+      "get": {
+        "tags": [
+          "Partidas"
+        ],
+        "summary": "Lista partidas",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/partidasList"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Partidas"
+        ],
+        "summary": "Insere uma partida",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/partidaUpdate"
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/partidasList"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      }
+    },
+    "/partidas/{id}": {
+      "put": {
+        "tags": [
+          "Partidas"
+        ],
+        "summary": "Altera uma partida",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/partidaUpdate"
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/partidasList"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Partidas"
+        ],
+        "summary": "Deleta uma partida",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/partidasDel"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      }
+    },
+    "/transferencias": {
+      "get": {
+        "tags": [
+          "Transferencias"
+        ],
+        "summary": "Lista transferencias",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/transferenciasList"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Transferencias"
+        ],
+        "summary": "Insere uma transferencia",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/transferenciaUpdate"
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/transferenciasList"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      }
+    },
+    "/transferencias/{id}": {
+      "put": {
+        "tags": [
+          "Transferencias"
+        ],
+        "summary": "Altera uma transferencia",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/transferenciaUpdate"
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/transferenciasList"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Transferencias"
+        ],
+        "summary": "Deleta uma transferencia",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/transferenciasDel"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro de servidor"
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080"
+    }
+  ],
+  "components": {
+    "requestBodies": {
+      "torneioUpdate": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/torneioUpdate"
+            }
+          }
+        },
+        "required": true
+      },
+      "timesUpdate": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/timesUpdate"
+            }
+          }
+        },
+        "required": true
+      },
+      "jogadorUpdate": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/jogadorUpdate"
+            }
+          }
+        },
+        "required": true
+      },
+      "partidaUpdate": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/partidaUpdate"
+            }
+          }
+        },
+        "required": true
+      },
+      "transferenciaUpdate": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/transferenciaUpdate"
+            }
+          }
+        },
+        "required": true
+      }
+    },
+    "schemas": {
+      "timesList": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32",
+              "example": 2
+            },
+            "nome": {
+              "type": "string",
+              "example": "Flamengo"
+            },
+            "localidade": {
+              "type": "string",
+              "example": "Rio de Janeiro"
+            }
+          }
+        }
+      },
+      "timesUpdate": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string",
+            "example": "Flamengo"
+          },
+          "localidade": {
+            "type": "string",
+            "example": "Rio de Janeiro"
+          }
+        }
+      },
+      "timesDel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": null
+          },
+          "nome": {
+            "type": "string",
+            "example": null
+          },
+          "localidade": {
+            "type": "string",
+            "example": null
+          }
+        }
+      },
+      "jogadoresList": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "example": 2
+          },
+          "nome": {
+            "type": "string",
+            "example": "Paulinho da Silva"
+          },
+          "pais": {
+            "type": "string",
+            "example": "Brasil"
+          },
+          "dataNascimento": {
+            "type": "string",
+            "example": "23/08/89"
+          },
+          "time": {
+            "type": "string",
+            "example": "Corinthians"
+          }
+        }
+      },
+      "jogadorUpdate": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string",
+            "example": "Valdivia de Castro"
+          },
+          "pais": {
+            "type": "string",
+            "example": "Chile"
+          },
+          "dataNascimento": {
+            "type": "string",
+            "example": "23/04/87"
+          },
+          "time": {
+            "type": "string",
+            "example": "Flamengo"
+          }
+        }
+      },
+      "jogadoresDel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": null
+          },
+          "nome": {
+            "type": "string",
+            "example": null
+          },
+          "pais": {
+            "type": "string",
+            "example": null
+          },
+          "dataNascimento": {
+            "type": "string",
+            "example": null
+          },
+          "time": {
+            "type": "string",
+            "example": null
+          }
+        }
+      },
+      "torneiosList": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            },
+            "time": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "example": "Flamengo, Palmeiras, Atlético MG, Bahia..."
+              }
+            },
+            "idPartida": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32",
+                "example": "1, 2, 4, 6, 9, 11, 12, 15, 18"
+              }
+            }
+          }
+        }
+      },
+      "torneioUpdate": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "Flamengo, Palmeiras, Atlético MG, Bahia..."
+            }
+          },
+          "idPartida": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32",
+              "example": "1, 2, 4, 6, 9, 11, 12, 15, 18"
+            }
+          }
+        }
+      },
+      "torneiosDel": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "example": null
+            },
+            "time": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "example": null
+              }
+            },
+            "idPartida": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "example": null
+              }
+            }
+          }
+        }
+      },
+      "partidasList": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32",
+              "example": 2
+            },
+            "time1": {
+              "type": "string",
+              "example": "Flamengo"
+            },
+            "time2": {
+              "type": "string",
+              "example": "Palmeiras"
+            }
+          }
+        }
+      },
+      "partidaUpdate": {
+        "type": "object",
+        "properties": {
+          "time1": {
+            "type": "string",
+            "example": "Bahia"
+          },
+          "time2": {
+            "type": "string",
+            "example": "Atlético MG"
+          }
+        }
+      },
+      "partidasDel": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "example": null
+            },
+            "time1": {
+              "type": "string",
+              "example": null
+            },
+            "time2": {
+              "type": "string",
+              "example": null
+            }
+          }
+        }
+      },
+      "transferenciasList": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32",
+              "example": 3
+            },
+            "nome": {
+              "type": "string",
+              "example": "Michael Marques"
+            },
+            "timeOrigem": {
+              "type": "string",
+              "example": "Atlético MG"
+            },
+            "timeDestino": {
+              "type": "string",
+              "example": "Bahia"
+            },
+            "data": {
+              "type": "string",
+              "example": "25/03/2022"
+            },
+            "valor": {
+              "type": "string",
+              "example": "R$750.00000"
+            }
+          }
+        }
+      },
+      "transferenciaUpdate": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string",
+            "example": "Michael Marques"
+          },
+          "timeOrigem": {
+            "type": "string",
+            "example": "Atlético MG"
+          },
+          "timeDestino": {
+            "type": "string",
+            "example": "Bahia"
+          },
+          "data": {
+            "type": "string",
+            "example": "25/03/2022"
+          },
+          "valor": {
+            "type": "string",
+            "example": "R$750.00000"
+          }
+        }
+      },
+      "transferenciasDel": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "example": null
+            },
+            "nome": {
+              "type": "string",
+              "example": null
+            },
+            "timeOrigem": {
+              "type": "string",
+              "example": null
+            },
+            "timeDestino": {
+              "type": "string",
+              "example": null
+            },
+            "data": {
+              "type": "string",
+              "example": null
+            },
+            "valor": {
+              "type": "string",
+              "example": null
+            }
+          }
+        }
+      }
+    }
+  }
+}

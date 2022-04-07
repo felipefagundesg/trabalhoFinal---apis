@@ -1,0 +1,574 @@
+{
+	"info": {
+		"_postman_id": "e3fe8cbf-9680-472d-b632-08066e5377d1",
+		"name": "Trabalho Final - API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/times",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/times",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"times"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/times",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Atlético MG\",\r\n    \"localidade\": \"Minas Gerais\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/times",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"times"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/times/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Flamengos\",\r\n    \"localidade\": \"Rio de Janeiros\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/times/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"times",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/times/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/times/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"times",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/jogadores",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/jogadores",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jogadores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/jogadores",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Paulinho da Silva\",\r\n    \"pais\": \"Brasil\",\r\n    \"dataNascimento\": \"23/08/89\",\r\n    \"time\": \"São Paulo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/jogadores",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jogadores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/jogadores/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Valdivia de Castro\",\r\n    \"pais\": \"Chile\",\r\n    \"dataNascimento\": \"23/04/87\",\r\n    \"time\": \"Flamengo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/jogadores/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jogadores",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/jogadores/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Valdivia de Castro\",\r\n    \"pais\": \"Chile\",\r\n    \"dataNascimento\": \"23/04/87\",\r\n    \"time\": \"Flamengo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/jogadores/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jogadores",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/torneios",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Flamengos\",\r\n    \"localidade\": \"Rio de Janeiro\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/torneios",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"torneios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/torneios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"time\": [\"Flamengo\", \"Palmeiras\", \"Atlético MG\", \"São Paulo\", \"Corinthians\", \"Santos\", \"Fluminense\", \"Atlético PR\", \"Bahia\"],\r\n    \"idPartida\": [1, 2, 3, 5, 8, 9, 10, 15, 18, 19]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/torneios",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"torneios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/torneios/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"time\": [\"Flamengo\", \"Palmeiras\", \"Atlético MG\", \"São Paulo\", \"Corinthians\", \"Fluminense\", \"Bahia\"],\r\n    \"idPartida\": [1, 2, 3, 9, 10, 15, 19]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/torneios/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"torneios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/torneios/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"time\": [\"Flamengo\", \"Palmeiras\", \"Atlético MG\", \"São Paulo\", \"Corinthians\", \"Fluminense\", \"Bahia\"],\r\n    \"idPartida\": [1, 2, 3, 9, 10, 15, 19]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/torneios/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"torneios",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/partidas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Flamengos\",\r\n    \"localidade\": \"Rio de Janeiro\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/partidas",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"partidas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/partidas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"time1\": \"Bahia\",\r\n    \"time2\": \"Coritiba\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/partidas",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"partidas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/partidas/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"time1\": \"Atlético MG\",\r\n    \"time2\": \"Palmeiras\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/partidas/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"partidas",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/partidas/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"time1\": \"Atlético MG\",\r\n    \"time2\": \"Palmeiras\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/partidas/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"partidas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/transferencias",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"timeOrigem\": \"Flamengos\",\r\n    \"timeDestino\": \"Palmeiras\",\r\n    \"data\": \"03/04/2022\",\r\n    \"valor\": \"R$1.000.000,00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/transferencias",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transferencias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/transferencias",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Michael Marques\",\r\n    \"timeOrigem\": \"Atlético MG\",\r\n    \"timeDestino\": \"Bahia\",\r\n    \"data\": \"25/03/2022\",\r\n    \"valor\": \"R$750.000,00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/transferencias",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transferencias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/transferencias/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Paulinho da Silva\",\r\n    \"timeOrigem\": \"Palmeiras\",\r\n    \"timeDestino\": \"Bahia\",\r\n    \"data\": \"06/04/2022\",\r\n    \"valor\": \"R$1.000.000,00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/transferencias/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transferencias",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/transferencias/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Paulinho da Silva\",\r\n    \"timeOrigem\": \"Palmeiras\",\r\n    \"timeDestino\": \"Bahia\",\r\n    \"data\": \"06/04/2022\",\r\n    \"valor\": \"R$1.000.000,00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/transferencias/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transferencias",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
